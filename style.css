@@ -22,7 +22,7 @@ body, html {
   background: 
     radial-gradient(
       circle closest-side,
-      #d299e4 calc(99% - var(--b)),#ffffff calc(100% - var(--b)) 99%,#0000
+      #f36a50 calc(99% - var(--b)),#ffffff calc(100% - var(--b)) 99%,#0000
      ) 50%/calc(100%/var(--f)) 100% no-repeat border-box;
   transform: scale(var(--f));
   transition: .5s;
@@ -38,16 +38,29 @@ h1 {
   color: #ffffff;
   background-color: #21252900;
 }
+h2
+{
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  background-color: #f05f44a1;
+}
+h3
+{
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #21252900;
+}
 
 hr {
   margin: 20px auto;
   color: #F05F44;
   border: 3px solid #F05F44;
-  max-width: 65px;
+  max-width: 700px;
   opacity: 1;  
 }
 .buffer {
-  height: 2rem;
+  height: 5rem;
 }
 
 
@@ -73,3 +86,83 @@ button {
 }
 
 
+/*----------------------------Carousel-------------------------------*/
+
+
+.containercarousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("https://rukminim2.flixcart.com/image/850/1000/kjx6tu80/book/6/m/z/html-and-css-original-imafzeyazkuy2htf.jpeg?q=20")
+      no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("https://images.ctfassets.net/23aumh6u8s0i/1IKVNqiLhNURzZXp652sEu/4379cfba19f0e19873af6074d3017f70/csharp")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("https://www.patterns.dev/img/reactjs/react-logo@3x.svg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(5) {
+      background: url("https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1282569/0712-Bad_Practices_in_Database_Design_-_Are_You_Making_These_Mistakes_Dan_Social-754bc73011e057dc76e55a44a954e0c3.png")
+        no-repeat 50% / cover;
+    }
+
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #7645d8;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
